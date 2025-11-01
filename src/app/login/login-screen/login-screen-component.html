@@ -1,0 +1,65 @@
+<div class="container" [class.blur]="showLogin()">
+  <div class="left">
+    <h2>Hợp Tác<br />Cùng<br />Phát Triển</h2>
+  </div>
+
+  <div class="right">
+    <h2>Phần Mềm Quản Lý Chăn Nuôi</h2>
+    <div class="logos">
+      <img src="assets/img/logo-hcnn.png" alt="Hiệp Hội Chăn Nuôi" class="logo1" />
+      <img src="assets/img/LOGO-AMF.png" alt="AF Logo" class="logo2" />
+    </div>
+
+    <img src="assets/img/cow.jpg" alt="Ảnh bò" class="cow-image" />
+
+    <div class="footer">
+      <p>
+        Hiệp Hội Chăn Nuôi Đồng Nai - Số 4/64, khu phố 10, phường Long Bình, tỉnh Đồng Nai<br />
+        Điện thoại: 0906 937 888<br />
+        Copyright © CÔNG TY CỔ PHẦN AMF APEX MEKONG FUTURE
+      </p>
+    </div>
+
+    <button class="login-btn" (click)="openLogin()">Đăng nhập</button>
+  </div>
+</div>
+
+<div class="login-popup" *ngIf="showLogin()">
+  <div class="popup-content">
+    <span class="close" (click)="closeLogin()">×</span>
+
+    <!-- Login Form -->
+    <div *ngIf="activeTab() === 'login'">
+      <h3>Đăng nhập</h3>
+      <input type="text" placeholder="Tài khoản" />
+      <input type="password" placeholder="Mật khẩu" />
+      <button class="btn-submit">Đăng nhập</button>
+      <div class="popup-links">
+        <a href="#" (click)="switchTab('register'); $event.preventDefault()">Đăng ký</a> |
+        <a href="#" (click)="switchTab('forgot'); $event.preventDefault()">Quên mật khẩu?</a>
+      </div>
+    </div>
+
+    <!-- Register Form -->
+    <div *ngIf="activeTab() === 'register'">
+      <h3>Đăng ký</h3>
+      <input type="text" placeholder="Tên đăng nhập" />
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Mật khẩu" />
+      <button class="btn-submit">Đăng ký</button>
+      <div class="popup-links">
+        <a href="#" (click)="switchTab('login'); $event.preventDefault()">Quay lại đăng nhập</a>
+      </div>
+    </div>
+
+    <!-- Forgot Password Form -->
+    <div *ngIf="activeTab() === 'forgot'">
+      <h3>Quên mật khẩu</h3>
+      <input type="email" placeholder="Nhập email của bạn" />
+      <button class="btn-submit">Gửi link đặt lại</button>
+      <div class="popup-links">
+        <a href="#" (click)="switchTab('login'); $event.preventDefault()">Quay lại đăng nhập</a>
+      </div>
+    </div>
+  </div>
+</div>

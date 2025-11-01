@@ -1,11 +1,8 @@
 import { Component, signal } from '@angular/core';
 
-
 @Component({
   selector: 'header-layout',
   templateUrl: './header-layout.html',
-  styleUrl: './header-layout.css'
+  styleUrls: ['./header-layout.css'],
 })
-export class HeaderLayout {
-  title = signal('HHCN Application');
-}
+export class HeaderLayout {}
