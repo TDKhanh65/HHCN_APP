@@ -1,10 +1,117 @@
-.logo {
-  width: 120px;
-  display: block;
-  margin: 0 auto 20px;
+.group-header{
+  width:100%;
+  background: #2A8040;
+  color: #ffffff;
+  box-sizing: border-box;
+  padding: 10px 18px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
-.group-header {
-  background-color: #f8f9fa;
-  padding: 10px 0;
-  text-align: center;
+
+.group-header .header-logo,
+.group-header .header-text,
+.group-header .header-info{
+  display:flex;
+  align-items:center;
+}
+
+.group-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+
+.header-logo{
+  flex: 0 0 auto;
+}
+.header-logo .logo{
+  display:block;
+  height:48px;
+  width:auto;
+  object-fit:contain;
+  margin-right:6px;
+}
+
+.header-text{
+  flex: 1 1 auto;
+  justify-content:center;
+}
+.header-text h1{
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:0.2px;
+  color:#ffffff;
+}
+
+.header-info{
+  flex: 0 0 300px;
+  justify-content:flex-end;
+  gap:12px;
+  position:relative;
+  padding-left:12px;
+}
+
+.header-info .avatar{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid rgba(255,255,255,0.20);
+  background:rgba(255,255,255,0.04);
+  box-shadow:0 2px 6px rgba(0,0,0,0.18);
+  margin-right:12px;
+  flex:0 0 auto;
+}
+
+.header-info::before{
+  content: "";
+  display: inline-block;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255,0.35);
+  margin-right:12px;
+  background: transparent;
+  flex:0 0 auto;
+}
+
+.header-info .id-line,
+.header-info .name-line{
+  display:block;
+  text-align:right;
+  line-height:1.05;
+  color: #fff;
+}
+
+.header-info .label{
+  display:inline-block;
+  font-weight:600;
+  opacity:0.95;
+  margin-right:6px;
+  font-size:14px;
+}
+
+.header-info .value{
+  display:inline-block;
+  font-weight:600;
+  font-size:15px;
+}
+
+.header-info .id-line{ margin-bottom:4px; }
+
+@media (max-width:720px){
+  .header-text h1{ font-size:16px; }
+  .header-info{ flex:0 0 220px; }
+  .header-info::before,
+  .header-info .avatar{ width:46px; height:46px; border-width:2px; }
+  .header-info .label{ font-size:13px; }
+  .header-info .value{ font-size:13px; }
+}
+
+@media (max-width:420px){
+  .group-header{ padding:10px 12px; gap:10px; }
+  .header-text{ display:none; }
 }
