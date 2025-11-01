@@ -1,0 +1,10 @@
+.logo {
+  width: 120px;
+  display: block;
+  margin: 0 auto 20px;
+}
+.group-header {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
+}
