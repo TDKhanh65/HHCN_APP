@@ -1,0 +1,31 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header cố định trên cùng */
+header-layout {
+  height: 120px;
+  flex-shrink: 0;
+}
+
+/* Phần dưới chia 2 cột: sidebar + nội dung */
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar chiếm cố định chiều ngang */
+sidebar-danhmuc {
+  width: 260px;
+  background-color: #e9f7ef;
+  border-right: 1px solid #cce3d0;
+}
+
+/* Khu vực nội dung (router outlet) */
+.page-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}

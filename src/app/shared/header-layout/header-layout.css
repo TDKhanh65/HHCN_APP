@@ -26,12 +26,28 @@
 .header-logo{
   flex: 0 0 auto;
 }
+.header-logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .header-logo .logo{
   display:block;
-  height:48px;
+  height:80px;
   width:auto;
   object-fit:contain;
   margin-right:6px;
+  margin-left: 15px;
+}
+.header-logo .logo-2{
+  display:block;
+  height:105px;
+  width:auto;
+  border-radius: 50%;
+  border:2px solid rgb(255, 255, 255);
+  object-fit:contain;
+  margin-right:6px;
+  margin-left: 45px;
 }
 
 .header-text{
@@ -46,58 +62,46 @@
   color:#ffffff;
 }
 
-.header-info{
-  flex: 0 0 300px;
-  justify-content:flex-end;
-  gap:12px;
-  position:relative;
-  padding-left:12px;
+.header-info {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 4px;
 }
 
-.header-info .avatar{
-  width:56px;
-  height:56px;
+.header-avt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.header-avt .avatar{
+  width:86px;
+  height:86px;
   border-radius:50%;
   object-fit:cover;
-  border:3px solid rgba(255,255,255,0.20);
-  background:rgba(255,255,255,0.04);
-  box-shadow:0 2px 6px rgba(0,0,0,0.18);
-  margin-right:12px;
-  flex:0 0 auto;
+  border:2px solid rgb(255, 255, 255);
+  background-color: transparent;
 }
 
-.header-info::before{
-  content: "";
-  display: inline-block;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  border:3px solid rgba(255,255,255,0.35);
-  margin-right:12px;
-  background: transparent;
-  flex:0 0 auto;
+.user-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.4;
+  margin-right: 30px;
 }
 
-.header-info .id-line,
-.header-info .name-line{
-  display:block;
-  text-align:right;
-  line-height:1.05;
-  color: #fff;
+.user-detail .label {
+  font-weight: 500;
+  font-size:20px;
 }
 
-.header-info .label{
-  display:inline-block;
-  font-weight:600;
-  opacity:0.95;
-  margin-right:6px;
-  font-size:14px;
-}
-
-.header-info .value{
-  display:inline-block;
-  font-weight:600;
-  font-size:15px;
+.user-detail .value {
+  font-weight: 400;
+  font-size:18px;
 }
 
 .header-info .id-line{ margin-bottom:4px; }
@@ -114,4 +118,28 @@
 @media (max-width:420px){
   .group-header{ padding:10px 12px; gap:10px; }
   .header-text{ display:none; }
+}
+@media (min-width:1200px){
+  :root{ --gap:24px; }
+  .header-inner{ padding:16px; }
+  .header-text h1{ font-size:40px; }
+}
+
+@media (min-width:900px) and (max-width:1199px){
+  :root{ --gap:18px; }
+  .header-text h1{ font-size:25px; }
+}
+
+@media (min-width:600px) and (max-width:899px){
+  :root{ --gap:14px; }
+  .header-inner{ padding:10px; }
+  .info-lines{ min-width:100px; }
+  .header-info{ min-width:160px; }
+}
+
+@media (max-width:599px){
+  .header-inner{
+    padding:8px;
+    gap:10px;
+  }
 }

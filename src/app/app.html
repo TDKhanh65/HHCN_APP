@@ -1,5 +1,16 @@
 <main>
-  <login-screen></login-screen>
-</main>
+  <!-- <div class="page-login">
+    <login-screen></login-screen>
+  </div> -->
+  <div class="layout-container">
+    <header-layout></header-layout>
 
-<router-outlet />
+    <div class="main-content">
+      <sidebar-danh-muc></sidebar-danh-muc>
+
+      <div class="page-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>
